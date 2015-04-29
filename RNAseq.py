@@ -5,7 +5,7 @@
 ###IMPORT###
 from bioblend import galaxy
 import optparse
-import uuid
+import uuid #for unique history id
 
 
 
@@ -28,16 +28,16 @@ def connect_to_galaxy(url,email,password,API_key):
 	except:
 		print "Please make sure your email & password or API key is correct."
 def run_workflow(GI):
-    history = GI.histories.create_history(str(uuid.uuid4()))
+    history = GI.histories.create_history(str(uuid.uuid4())) # Create a history with unique id
     workflow = GI.workflows.show_workflow('4f17b35d7b60af16')
     path = '/Users/longtian/Desktop/RNAseq/'
-    input1 = GI.tools.upload_file(path+'adrenal_1.fastq',history['id'],type='txt')
+    input1 = GI.tools.upload_file(path+'adrenal_1.fastq',history['id'],type='txt') # Upload files to history
     input2 = GI.tools.upload_file(path+'adrenal_2.fastq',history['id'],type='txt')
     input3 = GI.tools.upload_file(path+'brain_1.fastq',history['id'],type='txt')
     input4 = GI.tools.upload_file(path+'brain_2.fastq',history['id'],type='txt')
     reference_genome = GI.tools.upload_file(path+'chr19.fa',history['id'],type='txt')
     reference_annotation = GI.tools.upload_file(path+'chr19.gtf',history['id'],type='txt')
-    datamap = {'1691569':{'src':'hda','id':input1['outputs'][0]['id']},
+    datamap = {'1691569':{'src':'hda','id':input1['outputs'][0]['id']}, #Input should be in dictionary object. The numbers at the beginning is the id of input
               '1691570':{'src':'hda','id':input2['outputs'][0]['id']},
               '1691571':{'src':'hda','id':input3['outputs'][0]['id']},
               '1691572':{'src':'hda','id':input4['outputs'][0]['id']},
@@ -45,7 +45,7 @@ def run_workflow(GI):
               '1691573':{'src':'hda','id':reference_genome['outputs'][0]['id']}
               }
 
-    output = GI.workflows.run_workflow(workflow_id='4f17b35d7b60af16',dataset_map=datamap,history_id=history['id'])
+    output = GI.workflows.run_workflow(workflow_id='4f17b35d7b60af16',dataset_map=datamap,history_id=history['id']) #Run this workflow
 
 
 
