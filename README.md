@@ -18,7 +18,7 @@ Usage:
   
   Use API-key assigned by administrator:
   
-  	python RNAseq -u localhost:8080 -k your_API_key
+  	python RNAseq.py -u localhost:8080 -k your_API_key
   
   Upload four input data files, 1 reference genome and 1 reference annotation to analysis RNA seq data.
   
