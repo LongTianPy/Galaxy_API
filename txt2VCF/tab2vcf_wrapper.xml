@@ -1,0 +1,24 @@
+<tool id="tab_2_vcf" name="Convert tabular format to VCF">
+	<description>A very simple tool to convert tabular file to VCF file</description>
+	<command interpreter="python">
+	tab2cvf.py -i $input -o $output
+	</command>
+	<inputs>
+		<param format='tabular' name='input' type='data' lable="Source file" />
+	</inputs>
+	<outputs>
+		<data format="vcf" name="output" />
+	</outputs>
+
+	<tests>
+		<test>
+			<param name='input' value="sample.tabular" />
+			<output name='output_file' file="outputfile.vcf" />
+		</test>
+	</tests>
+
+	<help>
+	This tool converts tab-delimited file to Various Column Format file.
+	</help>
+
+</tool>
