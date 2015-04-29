@@ -14,11 +14,11 @@ Usage:
   
   Use account info:
   
-  	python connect2galaxy.py -u localhost:8080 -e you@email.com -p password
+  	python RNAseq.py -u localhost:8080 -e you@email.com -p password
   
   Use API-key assigned by administrator:
   
-  	python connect2galaxy.py -u localhost:8080 -k your_API_key
+  	python RNAseq -u localhost:8080 -k your_API_key
   
   Upload four input data files, 1 reference genome and 1 reference annotation to analysis RNA seq data.
   
