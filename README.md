@@ -14,14 +14,16 @@ Usage:
   
   Use account info:
   
-  	python connect2galaxy.py -u localhost:8080 -e you@email.com -p password
+  	python RNAseq.py -u localhost:8080 -e you@email.com -p password
   
   Use API-key assigned by administrator:
   
-  	python connect2galaxy.py -u localhost:8080 -k your_API_key
+  	python RNAseq.py -u localhost:8080 -k your_API_key
   
-
+  Upload four input data files, 1 reference genome and 1 reference annotation to analysis RNA seq data.
+  
 Update log:
 
 	04/10/2015 connect2galaxy.py
 	04/13/2015 Tab2VCF A tool to convert tabular format to VCF file, with Galaxy wrapper scripted.
+	04/29/2015 connect2galaxy.py was deleted. RNAseq.py was added.
